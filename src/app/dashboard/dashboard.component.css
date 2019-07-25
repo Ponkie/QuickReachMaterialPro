@@ -1,3 +1,12 @@
-#add-task {
+.content {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.btn-right {
     float: right;
+}
+
+button.mat-raised-button.mat-primary {
+    margin-bottom: 2%;
 }

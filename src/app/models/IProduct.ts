@@ -5,4 +5,10 @@ export interface IProduct {
     price: number;
     imageUrl: string;
     action?: string;
+    categories: ProductCategory[];
+}
+
+interface ProductCategory {
+    id: number;
+    name: string;
 }

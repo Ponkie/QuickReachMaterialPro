@@ -10,35 +10,69 @@ const productsStatic: IProduct[] = [
     name: "Leather Jacket",
     description: "Upgrade your look with this Wilsons Leather Vintage sleek moto jacket.",
     price: 5000,
-    imageUrl: "https://image1.superdry.com/static/images/optimised/zoom/upload9223368955665583819.jpg"
+    imageUrl: "https://image1.superdry.com/static/images/optimised/zoom/upload9223368955665583819.jpg",
+    categories: [
+      {
+        id: 1,
+        name: "Clothes"
+      },
+      {
+        id: 3,
+        name: "Jacket"
+      }
+    ]
   },
   {
     id: 2,
     name: "Ultraboost 19",
     description: "Amp up your run with the adidas® Men’s Ultraboost running shoe.",
     price: 6500,
-    imageUrl: "https://dks.scene7.com/is/image/GolfGalaxy/16ADIMLTRBSTMBLKWRNN_Black_Black_Grey?wid=1080&fmt=jpg"
+    imageUrl: "https://dks.scene7.com/is/image/GolfGalaxy/16ADIMLTRBSTMBLKWRNN_Black_Black_Grey?wid=1080&fmt=jpg",
+    categories: [
+      {
+        id: 4,
+        name: "Shoes"
+      }
+    ]
   },
   {
     id: 3,
     name: "MALM Desk",
     description: "The pull-out panel gives you an extra work surface. ",
     price: 9000,
-    imageUrl: "https://www.ikea.com/us/en/images/products/malm-desk-with-pull-out-panel-black__0133386_PE288803_S4.JPG"
+    imageUrl: "https://www.ikea.com/us/en/images/products/malm-desk-with-pull-out-panel-black__0133386_PE288803_S4.JPG",
+    categories: [
+      {
+        id: 5,
+        name: "Desk"
+      }
+    ]   
   },
   {
     id: 4,
     name: "Dagotto",
     description: "This foot-rest helps you sit in a good working position at your desk.",
     price: 716,
-    imageUrl: "https://www.ikea.com/au/en/images/products/dagotto-foot-rest-black__0156454_PE315498_S4.JPG"
+    imageUrl: "https://www.ikea.com/au/en/images/products/dagotto-foot-rest-black__0156454_PE315498_S4.JPG",
+    categories: [
+      {
+        id: 2,
+        name: "Home Furnitures and Fixtures"
+      }
+    ]
   },
   {
     id: 5,
     name: "Mango Juice Drink",
     description: "Del Monte Quality Mango Juice Drink.",
     price: 15,
-    imageUrl: "https://i5.walmartimages.com/asr/6d1621c6-ace4-476d-80af-e974285a75ab_1.ded5bea364f39a0ea4b6dd1822ae0b4b.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF"
+    imageUrl: "https://i5.walmartimages.com/asr/6d1621c6-ace4-476d-80af-e974285a75ab_1.ded5bea364f39a0ea4b6dd1822ae0b4b.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+    categories: [
+      {
+        id: 7,
+        name: "Food and Drinks"
+      }
+    ]
   }
 ]
 
@@ -52,7 +86,7 @@ export class ProductsComponent implements OnInit {
   search: string;
   products: IProduct[];
   isSearchVisible: boolean = false;
-  columnsToDisplay: string[] = ['name', 'description', 'price', 'imageUrl', 'action'];
+  columnsToDisplay: string[] = ['name', 'description', 'price', 'categories', 'imageUrl', 'action'];
 
   @ViewChild(MatTable) table: MatTable<any>;
 

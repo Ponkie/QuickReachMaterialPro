@@ -40,6 +40,12 @@ const categoriesStatic: ICategory[] = [
     name: "Light Fixture",
     description: "Lamp, chandelier, and more",
     isActive: true
+  },
+  {
+    id: 7,
+    name: "Food and Drinks",
+    description: "Food and Drinks",
+    isActive: true
   }
 ];
 

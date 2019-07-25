@@ -1,7 +1,8 @@
+<div class="content">
 <h2>Administrator Dashboard</h2>
-<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-evenly stretch">
+<div fxLayout="row" fxLayoutAlign="stretch">
 
-  <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+  <div xFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
     <mat-card>
       <mat-card-content>
         <mat-card-title>
@@ -9,12 +10,12 @@
         </mat-card-title>
         <span class="m-t-40 display-6">4150</span>
         <h6 class="m-b-30">Product reviews for 2019</h6>
-        <button mat-raised-button color="primary">Read Reviews</button>
+        <button class="btn-right" mat-raised-button color="primary">Read Reviews</button>
       </mat-card-content>
     </mat-card>
   </div> <!--fxFlex-->
 
-  <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
+  <div xFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
     <mat-card>
         <mat-card-content>
           <mat-card-title>
@@ -33,9 +34,7 @@
   <div fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
     <mat-card>
       <mat-card-content>
-        <div class="float-right">
-          <button id="add-task" mat-raised-button class="btn-rounded btn-success" data-toggle="modal" data-target="#myModal">Add Task</button>
-        </div>
+          <button mat-raised-button class="btn-rounded btn-success btn-right" data-toggle="modal" data-target="#myModal">Add Task</button>
         <mat-card-title>
           <h4 class="m-b-30">To Do list</h4>
         </mat-card-title>
@@ -49,3 +48,4 @@
     </mat-card>
   </div> <!--fxFlex-->  
 </div> <!--row-->
+</div> <!--content-->

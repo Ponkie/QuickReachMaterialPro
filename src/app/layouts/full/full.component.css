@@ -6,3 +6,8 @@
     color: #ffffff
 }
 
+mat-sidenav {
+    background-color: rgb(3, 4, 73);
+    background-image: linear-gradient(rgb(255, 255, 255), rgba(163, 163, 163, 0.329));
+    color: #ffffff;
+}
