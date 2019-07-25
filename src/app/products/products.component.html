@@ -1,24 +1,93 @@
-<h4>Administrator Dashboard</h4>
-<div fxLayout="row" fxLayoutWrap="wrap">
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-around stretch">
+    <div fxFlex.gt-lg="20" fxFlex.gt-md="20" fxFlex.gt-sm="20" fxFlex.gt-xs="20" fxFlex="20">
+        <h2>Products</h2>
+    </div>
+    <div id="search" fxLayoutAlign="end" fxFlex.gt-lg="80" fxFlex.gt-md="80" fxFlex.gt-sm="80" fxFlex.gt-xs="80" fxFlex="80">
+        <mat-form-field *ngIf="isSearchVisible">
+            <input matInput type="text" (keyup)="updateProducts()" [(ngModel)]="search" autofocus />
+        </mat-form-field>
+        <button mat-button mat-icon-button color="primary" (click)="showSearchBar()">
+            <i class="fa fa-search fa-2x"></i>
+        </button>
+    </div>
+</div>
 
-    <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-sm="25" fxFlex.gt-xs="50" fxFlex="50"  *ngFor="let product of products">
+<div class=container>
+    <div fxLayout="row" fxLayoutWrap="wrap">
+        <button mat-button class="float-right btn-lg" color="primary" id="add-product" (click)="openDialog('Add',{})" matTooltip="Add Product" matTooltipPosition="right">
+            <i class="fa fa-plus-square fa-2x"></i>
+        </button>
+    </div>
+
+    <div *ngIf="products && products.length > 0 else noProducts">
+        <table mat-table #productTable [dataSource]="products">
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let product"> {{product.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef>Description</th>
+                <td mat-cell *matCellDef="let product"> {{product.description}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="price">
+                <th mat-header-cell *matHeaderCellDef>Price</th>
+                <td mat-cell *matCellDef="let product"> {{product.price | currency: 'PhP ' : 'symbol'}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="imageUrl">
+                <th mat-header-cell *matHeaderCellDef>Image</th>
+                <td mat-cell *matCellDef="let product"> <img [src]="product.imageUrl" > </td>
+            </ng-container>
+            
+            <!-- Action Column -->
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef>Action</th>
+                <td mat-cell *matCellDef="let product" class="action-link"> 
+                <button mat-button color="primary" (click)="openDialog('Edit', product)" matTooltip="Edit Product" matTooltipPosition="right">
+                    <i class="fa fa-pencil-square-o fa-2x"></i>
+                </button>
+                <button mat-button color="warn" (click)="openDialog('Archive', product)" matTooltip="Archive Product" matTooltipPosition="right">
+                    <i class="fa fa-archive fa-2x"></i>
+                </button>  
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let rowData; columns: columnsToDisplay"></tr>
+        </table>
+
+        <mat-paginator [length]="100"
+            [pageSize]="10"
+            [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>
+    </div>
+
+    <ng-template #noProducts>
+        No products available.
+    </ng-template>
+</div>    
+
+<!-- <div fxLayout="row" fxLayoutWrap="wrap">
+
+    <div fxLayoutAlign="space-evenly stretch" fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-sm="33" fxFlex.gt-xs="50" fxFlex="50"  *ngFor="let product of products">
       <mat-card>
           <mat-card-header>
-            <mat-card-title>{{product.name}}</mat-card-title>
+            <mat-card-title><b>{{product.name}}</b></mat-card-title>
             <mat-card-subtitle>{{product.price | currency: 'PhP ' : 'symbol'}}</mat-card-subtitle>
           </mat-card-header>
-          <img mat-card-image [src]="product.imageUrl" [alt]="product.name">
+          <img mat-card-image [src]="product.imageUrl" [alt]="product.name" />
           <mat-card-content>
-              <p>
-                  {{product.description}}
-              </p>
-
-              <mat-card-actions>
-                  <button mat-raised-button color="accent">LIKE</button>
-                  <button mat-button>SHARE</button>
-              </mat-card-actions>
+            <p>
+                {{product.description}}
+            </p>
+            <mat-card-actions>
+                <button mat-raised-button color="accent" (click)="openDialog('Edit',product)">EDIT</button>
+                <button mat-raised-button color="warn" (click)="openDialog('Archive',product)">ARCHIVE</button>
+            </mat-card-actions>
           </mat-card-content>
       </mat-card>
     </div>
 
-</div> <!--row-->
+</div> row -->

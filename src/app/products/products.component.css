@@ -1,0 +1,59 @@
+table {
+    width: 100%;
+}
+
+img {
+    width: 40%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    display: inline;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+#search {
+    width: 100%;
+    float: right;
+    padding: 1% 0;
+}
+
+#add-product {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#add-product-icon {
+    margin-left: 0;
+    font-size: 18px;
+}
+
+.cdk-column-name {
+    width: 10%;
+}
+
+.cdk-column-imageUrl {
+    width: 35%;
+}
+
+.cdk-column-price {
+    width: 10%
+}
+
+.cdk-column-imageUrl {
+    width: 35%;
+}
+
+.cdk-column-action {
+    width: 10%;
+}
+
+.mat-cell {
+    padding: 10px;
+}

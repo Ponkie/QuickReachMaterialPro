@@ -1,5 +1,5 @@
-<h4>Administrator Dashboard</h4>
-<div fxLayout="row" fxLayoutWrap="wrap">
+<h2>Administrator Dashboard</h2>
+<div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-evenly stretch">
 
   <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
     <mat-card>
@@ -21,7 +21,7 @@
               <h3 class="m-b-30">Reviews Overview</h3>
           </mat-card-title>
           <div>
-            (insert chart)
+              <img mat-card-image src="https://cms-assets.tutsplus.com/uploads/users/1451/posts/27197/image/doughnut-chart.png" alt="Photo of a Shiba Inu">
           </div>
         </mat-card-content>
       </mat-card>
@@ -33,13 +33,18 @@
   <div fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100">
     <mat-card>
       <mat-card-content>
-        <button class="float-right btn btn-sm btn-rounded btn-success" data-toggle="modal" data-target="#myModal">Add Task</button>
+        <div class="float-right">
+          <button id="add-task" mat-raised-button class="btn-rounded btn-success" data-toggle="modal" data-target="#myModal">Add Task</button>
+        </div>
         <mat-card-title>
           <h4 class="m-b-30">To Do list</h4>
         </mat-card-title>
         <mat-card-subtitle>
           <h6 class="m-b-30">List of your next task to complete</h6>
         </mat-card-subtitle>
+        <div fxLayout="row" *ngFor="let task of tasks">
+            <mat-checkbox>{{task}}</mat-checkbox>
+        </div>
       </mat-card-content>
     </mat-card>
   </div> <!--fxFlex-->  

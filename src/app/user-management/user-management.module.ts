@@ -3,20 +3,19 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DemoMaterialModule } from '../demo-material-module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { ProductsComponent } from './products.component';
-import { ProductsRoutes } from './products.routing';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserManagementRoutes } from './user-management.routing';
+import { AdministratorsComponent } from './administrators/administrators.component';
 
 @NgModule({
   imports: [
     CommonModule,
     DemoMaterialModule,
     FlexLayoutModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule.forChild(ProductsRoutes)
+    RouterModule.forChild(UserManagementRoutes)
   ],
-  declarations: [ProductsComponent]
+  declarations: [
+    AdministratorsComponent
+  ]
 })
-export class ProductsModule { }
+export class UserManagementModule { }

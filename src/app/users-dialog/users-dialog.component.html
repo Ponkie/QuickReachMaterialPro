@@ -1,0 +1,25 @@
+<h1 mat-dialog-title><strong>{{action}} {{user.type}}</strong></h1>
+<div mat-dialog-content>
+  <mat-form-field *ngIf="action != 'Archive'; else elseTemplate">
+    <input placeholder="{{action}} Name" type="text" matInput [(ngModel)]="user.name">
+  </mat-form-field>
+  <br>
+  <mat-form-field *ngIf="action != 'Archive'">
+    <input placeholder="{{action}} Email Address" type="text" matInput [(ngModel)]="user.emailAddress">
+  </mat-form-field>
+  <br>
+  <mat-form-field *ngIf="action != 'Archive'">
+    <input placeholder="{{action}} Mobile Number (e.g. 09999999999)" type="number" matInput [(ngModel)]="user.mobileNumber">
+  </mat-form-field>
+  <br>
+  <mat-form-field *ngIf="action != 'Archive'">
+    <input placeholder="{{action}} Image URL" type="text" matInput [(ngModel)]="user.imageUrl">
+  </mat-form-field>
+  <ng-template #elseTemplate>
+    Proceed to archive <b>{{user.name}}</b>?
+  </ng-template>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()" mat-flat-button color="accent">{{action}}</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>

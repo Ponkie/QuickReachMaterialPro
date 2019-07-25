@@ -44,6 +44,21 @@ const MENUITEMS = [
     icon: 'shopping_cart'
   },
   {
+    state: 'categories',
+    name: 'Categories',
+    type: 'link',
+    icon: 'folder'
+  },
+  {
+    state: 'users',
+    name: 'User Management',
+    type: 'sub',
+    icon: 'people',
+    children: [
+      { state: 'administrators', name: 'Administrators' }
+    ]
+  },
+  {
     state: 'material',
     name: 'Material Ui',
     type: 'sub',

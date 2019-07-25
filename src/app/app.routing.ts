@@ -22,12 +22,20 @@ export const AppRoutes: Routes = [
         loadChildren: './starter/starter.module#StarterModule'
       },
       {
+        path: 'users',
+        loadChildren: './user-management/user-management.module#UserManagementModule'
+      },
+      {
         path: 'dashboard',
         loadChildren: './dashboard/dashboard.module#DashboardModule'
       },
       {
         path: 'products',
         loadChildren: './products/products.module#ProductsModule'
+      },
+      {
+        path: 'categories',
+        loadChildren: './categories/categories.module#CategoriesModule'
       },
       {
         path: 'icons',

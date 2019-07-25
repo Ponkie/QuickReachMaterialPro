@@ -3,10 +3,10 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { DemoMaterialModule } from '../demo-material-module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { ProductsComponent } from './products.component';
-import { ProductsRoutes } from './products.routing';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { CategoriesComponent } from './categories.component';
+import { CategoriesRoutes } from './categories.routing';
 
 @NgModule({
   imports: [
@@ -15,8 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forChild(ProductsRoutes)
+    RouterModule.forChild(CategoriesRoutes)
   ],
-  declarations: [ProductsComponent]
+  declarations: [CategoriesComponent]
 })
-export class ProductsModule { }
+export class CategoriesModule { }

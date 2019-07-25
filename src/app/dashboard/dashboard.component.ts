@@ -12,4 +12,10 @@ export class DashboardComponent implements AfterViewInit {
   ngAfterViewInit() {
   }
 
+  tasks: string[] = [
+    "Add new administrator",
+    "Send email to Estong",
+    "Contact advertisers"
+  ]
+
 }

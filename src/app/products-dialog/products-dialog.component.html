@@ -1,0 +1,33 @@
+<h1 mat-dialog-title><strong>{{action}} Product</strong></h1>
+<div mat-dialog-content>
+  <mat-form-field *ngIf="action != 'Archive'; else elseTemplate">
+    <input placeholder="{{action}} Name" type="text" matInput [(ngModel)]="product.name">
+    <!-- <mat-error *ngIf="product.name">
+      Please enter a name
+    </mat-error>
+    <mat-error *ngIf="nameFormControl.hasError('required')">
+      Name is <strong>required</strong>
+    </mat-error> -->
+  </mat-form-field>
+  <br>
+  <mat-form-field *ngIf="action != 'Archive'">
+    <input placeholder="{{action}} Description" type="text" matInput [(ngModel)]="product.description">
+  </mat-form-field>
+  <br>
+  <mat-form-field *ngIf="action != 'Archive'">
+    <input placeholder="{{action}} Price" type="number" matInput [(ngModel)]="product.price">
+    <span matPrefix>PhP&nbsp;</span>
+    <span matSuffix>.00</span>
+  </mat-form-field>
+  <br>
+  <mat-form-field *ngIf="action != 'Archive'">
+    <input placeholder="{{action}} Image URL" type="text" matInput [(ngModel)]="product.imageUrl">
+  </mat-form-field>
+  <ng-template #elseTemplate>
+    Proceed to archive <b>{{product.name}}</b>?
+  </ng-template>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()" mat-flat-button color="accent" [disabled]="product.name==''">{{action}}</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>
