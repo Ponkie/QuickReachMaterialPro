@@ -6,6 +6,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { UserManagementRoutes } from './user-management.routing';
 import { AdministratorsComponent } from './administrators/administrators.component';
+import { VendorsComponent } from './vendors/vendors.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { AdministratorsComponent } from './administrators/administrators.compone
     RouterModule.forChild(UserManagementRoutes)
   ],
   declarations: [
-    AdministratorsComponent
+    AdministratorsComponent,
+    VendorsComponent
   ]
 })
 export class UserManagementModule { }

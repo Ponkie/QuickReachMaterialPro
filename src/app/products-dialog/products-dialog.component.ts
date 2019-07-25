@@ -10,7 +10,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
   styleUrls: ['./products-dialog.component.css']
 })
 export class ProductsDialogComponent implements OnInit {
-
+  
   action: string;
   product: IProduct;
   nameFormControl: FormControl;

@@ -6,31 +6,60 @@
   <!-- column -->
   <!-- column -->
   <div id="add-admin" pd-20 fxFlex.gt-lg="8" fxFlex.gt-md="8" fxFlex.gt-sm="8" fxFlex.gt-xs="8" fxFlex="92">
-    <button mat-button class="float-right btn-lg" color="primary" id="add-product" (click)="openDialog('Add',{type:'Administrator'})" matTooltip="Add Administraor" matTooltipPosition="right">
+    <button mat-button class="float-right btn-lg" color="primary" id="add-product" (click)="openDialog('Add',{type:'Administrator'})" matTooltip="Add Administrator" matTooltipPosition="right">
       <i class="fa fa-plus-square fa-3x"></i>
     </button>
   </div>
   <!-- column -->
 </div>
-<div fxLayout="row" fxLayoutWrap="wrap">
-  <!-- column -->
-  <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100" *ngFor="let admin of administrators">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>{{admin.name}}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <img mat-card-image class="admin-picture" [src]="admin.imageUrl" alt="Photo of a Shiba Inu">
-          <div class="font-14">Email Address:</div>
-          <div class="font-14">{{admin.emailAddress}}</div>
-          <div class="font-14">Mobile Number:</div> 
-          <div class="font-14">{{admin.mobileNumber}}</div>
-        <mat-card-actions>
-            <button mat-raised-button color="accent" (click)="openDialog('Edit', admin)">Edit</button>
-            <button mat-raised-button color="warn" (click)="openDialog('Archive', admin)">Archive</button>
-        </mat-card-actions>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <!-- column -->
-</div>
+
+<mat-tab-group>
+  <mat-tab label="Active">
+    <div fxLayout="row" fxLayoutWrap="wrap">
+      <!-- column -->
+      <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100" *ngFor="let admin of activeAdmins">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{admin.name}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <img mat-card-image class="admin-picture" [src]="admin.imageUrl" alt="Photo of a Shiba Inu">
+              <div class="font-14">Email Address:</div>
+              <div class="font-14">{{admin.emailAddress}}</div>
+              <div class="font-14">Mobile Number:</div> 
+              <div class="font-14">{{admin.mobileNumber}}</div>
+            <mat-card-actions>
+                <button mat-raised-button color="accent" (click)="openDialog('Edit', admin)">Edit</button>
+                <button mat-raised-button color="warn" (click)="openDialog('Archive', admin)">Archive</button>
+            </mat-card-actions>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <!-- column -->
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Archived">
+    <div fxLayout="row" fxLayoutWrap="wrap">
+      <!-- column -->
+      <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100" *ngFor="let admin of inActiveAdmins">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{admin.name}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <img mat-card-image class="admin-picture" [src]="admin.imageUrl" alt="Photo of a Shiba Inu">
+              <div class="font-14">Email Address:</div>
+              <div class="font-14">{{admin.emailAddress}}</div>
+              <div class="font-14">Mobile Number:</div> 
+              <div class="font-14">{{admin.mobileNumber}}</div>
+            <mat-card-actions>
+              Active Administrator: <mat-slide-toggle [color]="color" [checked]="admin.isActive"></mat-slide-toggle>
+            </mat-card-actions>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <!-- column -->
+    </div>
+  </mat-tab>
+</mat-tab-group>

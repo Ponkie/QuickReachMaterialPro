@@ -4,6 +4,7 @@ export interface IUser {
     emailAddress: string;
     mobileNumber: string;
     imageUrl: string;
+    isActive: boolean;
     action?: string;
     type?: string;
 }

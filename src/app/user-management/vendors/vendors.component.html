@@ -1,0 +1,68 @@
+<div fxLayout="row" fxLayoutWrap="wrap">
+  <!-- column -->
+  <div fxFlex.gt-lg="92" fxFlex.gt-md="92" fxFlex.gt-sm="92" fxFlex.gt-xs="92" fxFlex="92">
+      <h2>Vendors</h2>
+  </div>
+  <!-- column -->
+  <!-- column -->
+  <div id="add-vendor" pd-20 fxFlex.gt-lg="8" fxFlex.gt-md="8" fxFlex.gt-sm="8" fxFlex.gt-xs="8" fxFlex="92">
+    <button mat-button class="float-right btn-lg" color="primary" id="add-product" (click)="openDialog('Add',{type:'Vendor'})" matTooltip="Add Vendor" matTooltipPosition="right">
+      <i class="fa fa-plus-square fa-3x"></i>
+    </button>
+  </div>
+  <!-- column -->
+</div>
+
+<mat-tab-group>
+  <mat-tab label="Active">
+    <!-- <mat-card-content>Content 1</mat-card-content> -->
+    <div fxLayout="row" fxLayoutWrap="wrap">
+      <!-- column -->
+      <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100" *ngFor="let vendor of activeVendors">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{vendor.name}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <img mat-card-image class="vendor-picture" [src]="vendor.imageUrl"  [alt]="vendor.name">
+              <div class="font-14">Email Address:</div>
+              <div class="font-14">{{vendor.emailAddress}}</div>
+              <div class="font-14">Mobile Number:</div> 
+              <div class="font-14">{{vendor.mobileNumber}}</div>
+            <mat-card-actions>
+                <!-- <button mat-raised-button color="accent" (click)="openDialog('Edit', admin)">Edit</button> -->
+                <button mat-raised-button color="warn" (click)="openDialog('Archive', vendor)">Archive</button>
+            </mat-card-actions>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <!-- column -->
+    </div>
+  </mat-tab> <!--Active-->
+
+  <mat-tab label="Archived">
+    <!-- <mat-card-content>Content 1</mat-card-content> -->
+    <div fxLayout="row" fxLayoutWrap="wrap">
+      <!-- column -->
+      <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-sm="50" fxFlex.gt-xs="100" fxFlex="100" *ngFor="let vendor of inActiveVendors">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{vendor.name}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <img mat-card-image class="vendor-picture" [src]="vendor.imageUrl"  [alt]="vendor.name">
+              <div class="font-14">Email Address:</div>
+              <div class="font-14">{{vendor.emailAddress}}</div>
+              <div class="font-14">Mobile Number:</div> 
+              <div class="font-14">{{vendor.mobileNumber}}</div>
+            <mat-card-actions>
+              Active Vendor: <mat-slide-toggle [color]="color" [checked]="vendor.isActive"></mat-slide-toggle>
+            </mat-card-actions>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <!-- column -->
+    </div>
+  </mat-tab> <!--Active-->
+
+</mat-tab-group>
