@@ -45,7 +45,7 @@
     <mat-card>
       <mat-card-content>
           <mat-form-field>
-            <input matInput placeholder="Task" [(ngModel)]="taskInput">
+            <input matInput placeholder="Enter Task" [(ngModel)]="taskInput">
           </mat-form-field>
           <button mat-raised-button class="btn-rounded btn-success btn-right" (click)="addTask()">Add Task</button>
         <mat-card-title>
@@ -54,12 +54,14 @@
         <mat-card-subtitle>
           <h6 class="m-b-30">List of your next task to complete</h6>
         </mat-card-subtitle>
-        <div fxLayout="row" *ngFor="let task of tasks, let i of index">
-            <mat-checkbox (click)="changeStatus(i)" [checked]="task.isDone">
-              <p [ngClass]="{
-                'checked-done': task.isDone == true,
-                'not-checked': task.isDone == false
-              }">{{task.description}}</p>
+        <div fxLayout="row" *ngFor="let task of tasks">
+            <mat-checkbox (click)="changeStatus(task)" [checked]="task.isDone">
+              <p [ngClass]="
+                {
+                  'checked-done': task.isDone == true,
+                  'not-checked': task.isDone == false
+                }
+              ">{{task.description}}</p>
             </mat-checkbox>
         </div>
       </mat-card-content>
