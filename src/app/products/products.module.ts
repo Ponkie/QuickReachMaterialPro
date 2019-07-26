@@ -7,6 +7,7 @@ import { ProductsComponent } from './products.component';
 import { ProductsRoutes } from './products.routing';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductsService } from './../services/products.service';
 
 @NgModule({
   imports: [
@@ -16,6 +17,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(ProductsRoutes)
+  ],
+  providers: [
+    ProductsService
   ],
   declarations: [ProductsComponent]
 })

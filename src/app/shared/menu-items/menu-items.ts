@@ -25,12 +25,12 @@ export interface Menu {
 }
 
 const MENUITEMS = [
-  {
-    state: 'starter',
-    name: 'Starter Page',
-    type: 'link',
-    icon: 'content_copy'
-  },
+  // {
+  //   state: 'starter',
+  //   name: 'Starter Page',
+  //   type: 'link',
+  //   icon: 'content_copy'
+  // },
   {
     state: 'dashboard',
     name: 'Dashboard',

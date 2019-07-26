@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CategoriesComponent } from './categories.component';
 import { CategoriesRoutes } from './categories.routing';
+import { CategoriesService } from './../services/categories.service';
 
 @NgModule({
   imports: [
@@ -16,6 +17,9 @@ import { CategoriesRoutes } from './categories.routing';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(CategoriesRoutes)
+  ],
+  providers: [
+    CategoriesService
   ],
   declarations: [CategoriesComponent]
 })

@@ -16,6 +16,7 @@ export class CategoriesDialogComponent implements OnInit {
     public dialogRef: MatDialogRef<CategoriesDialogComponent>,
     //@Optional() is used to prevent error if no data is passed
     @Optional() @Inject(MAT_DIALOG_DATA) public data: ICategory) {
+      // console.log(data);
     this.category = {...data};
     this.action = this.category.action;
   }

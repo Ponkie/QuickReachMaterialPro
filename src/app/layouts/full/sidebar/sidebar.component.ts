@@ -14,7 +14,7 @@ import { MenuItems } from '../../../shared/menu-items/menu-items';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: []
+  styleUrls: ['./sidebar.component.css']
 })
 export class AppSidebarComponent implements OnDestroy {
   public config: PerfectScrollbarConfigInterface = {};

@@ -1,0 +1,12 @@
+.nav-list-text {
+    color: #ffffff !important;
+    text-shadow: 0px 0px 5px #555555 !important;
+}
+
+#sidebar-profile-text {
+    padding-top: 30%;
+}
+
+#sidebar-profile-text > p {
+    text-align: center;
+}
