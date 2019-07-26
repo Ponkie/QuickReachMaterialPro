@@ -10,3 +10,11 @@
 button.mat-raised-button.mat-primary {
     margin-bottom: 2%;
 }
+
+.checked-done {
+    text-decoration: line-through;
+}
+
+.not-checked {
+    text-decoration: none;
+}

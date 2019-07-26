@@ -37,15 +37,15 @@
                 <td mat-cell *matCellDef="let product"> {{product.price | currency: 'PhP ' : 'symbol'}} </td>
             </ng-container>
 
-            <!-- <ng-container matColumnDef="categories">
+            <ng-container matColumnDef="categories">
                 <th mat-header-cell *matHeaderCellDef>Categories</th>
                 <td mat-cell *matCellDef="let product">
                     <ul *ngFor="let category of product.productCategories">
                         <li class="category">{{category.categoryID}}</li>
-                    </ul> -->
+                    </ul>
                     <!-- {{product.categories}}  -->
-                <!-- </td>
-            </ng-container> -->
+                </td>
+            </ng-container>
 
             <ng-container matColumnDef="imageUrl">
                 <th mat-header-cell *matHeaderCellDef>Image</th>

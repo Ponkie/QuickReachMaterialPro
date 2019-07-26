@@ -88,7 +88,7 @@ export class ProductsComponent implements OnInit {
   isSearchVisible: boolean = false;
   search: string = "";
   products: IProduct[];
-  columnsToDisplay: string[] = ['name', 'description', 'price', 'imageUrl', 'action'];
+  columnsToDisplay: string[] = ['name', 'description', 'price', 'categories', 'imageUrl', 'action'];
 
   // Paginator properties
   productsLength: number;
