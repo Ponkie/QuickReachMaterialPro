@@ -18,6 +18,10 @@ export const AppRoutes: Routes = [
           './material-component/material.module#MaterialComponentsModule'
       },
       {
+        path: 'home',
+        loadChildren: './home/home.module#HomeModule'
+      },
+      {
         path: 'starter',
         loadChildren: './starter/starter.module#StarterModule'
       },
